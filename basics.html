@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		//declare a helloWorld variable with a message of "hey there!"
+
+		var helloWorld = "hey there!";
+
+		// Alert your helloWorld variable for all to see.
+
+		alert(helloWorld);
+
+		// Output your helloWorld to the console.
+
+		console.log(helloWorld);
+
+		// Convert your helloWorld variable to an array of words and store that value into a wordsArray variable.
+
+		helloWorld = ['hello', 'world', 'hey', 'goodbye'];
+		var wordsArray = helloWorld;
+
+		// Print the second word to the console.
+
+		console.log(wordsArray[1]);
+
+		// Print each character of each word in the array on its own line to the console.
+		for(var i = 0; i < helloWorld.length; i++){
+			var displayWords = helloWorld[i].split();
+			console.log(displayWords);
+		}
+
+		//Determine how many characters are in the words in the wordsArray.
+
+		console.log(wordsArray.length);
+
+		// Create an array of the following fruit called fruitArray: apple, orange, banana, pear
+
+		var fruitArray = ['apple', 'orange', 'banana', 'pear'];
+
+		//Print the third item in the array on the console.
+
+		console.log(fruitArray[2])
+
+		// Find all the fruit in the fruitArray that have an "e" in their name
+
+		
+		//Remove the orange from the fruitArray.
+		fruitArray.splice(1, 1);
+		console.log(fruitArray);
+
+		// Add the orange back to the fruitArray between banana and pear
+		fruitArray.splice(2, 0, 'orange');
+		console.log(fruitArray);
+
+
+	</script>
+</body>
+</html>

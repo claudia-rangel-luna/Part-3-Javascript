@@ -46,7 +46,11 @@
 		console.log(fruitArray[2])
 
 		// Find all the fruit in the fruitArray that have an "e" in their name
-
+		for(var i= 0; i < fruitArray.length; i++){
+			if(fruitArray[i].indexOf('e') != -1){
+				console.log(fruitArray[i]);
+			}
+		}
 		
 		//Remove the orange from the fruitArray.
 		fruitArray.splice(1, 1);

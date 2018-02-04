@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Animations</title>
+    <style type="text/css">
+    body {
+        width: 1000px;
+        height: 500px;
+        
+    }
+
+    .box {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        top: 20px;
+        left: 10px;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <script type="text/javascript">
+    // Add a 200px x 200px red square div to the page. Animate it from left to right, 10px per iteration. Move it 1000px to the right.
+
+    var redSquare = document.querySelector('.box');
+    
+    var intervalId;
+
+    function moveLeftToRight() {
+        var redSquareLeft = getComputedStyle(redSquare).left.replace('px', '');
+
+        if (redSquareLeft <  1000) {
+            console.log("move car right");
+
+            redSquare.style.left = `${parseInt(redSquareLeft) + 10}px`;
+        }
+    }
+    var intervalId = setInterval(moveLeftToRight, 50)
+    </script>
+</body>
+
+</html>

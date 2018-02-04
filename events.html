@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Events</title>
+</head>
+<body>
+	
+	<script type="text/javascript">
+		// Alert "hello world" 5 seconds after the page loads.
+		
+		document.onload = setTimeout(function () {
+		 alert('hello world');
+		}, 5000);
+
+		// Add a button to the page. When clicked, say "hello world" to the console.
+
+		var button = document.createElement('button');
+		var text = document.createTextNode('Click Me');
+		button.appendChild.text;
+		
+		document.body.appendChild(button);
+
+		button.addEventListener('click', function(){
+			console.log("hello world");
+		})
+	</script>
+</body>
+</html>

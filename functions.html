@@ -16,33 +16,44 @@
 
 		//Create a function named multiply that multiplies two numbers, and takes a callback function. Print the result of calling the multiply function when passing in 2 and 2. Pass in an anonymous function that alerts the result of the multiply function using the callback parameter.
 
-		function Multiply(x, y, callback) {
-			return x * y; 
-			
+		function multiply(x, y, callback) {
+			var multiNumbers = x * y; 
+			callback(multiNumbers);
 		}
-		var resultMulti = Multiply(2, 2);
+
+		var resultMulti = multiply(2, 2, function(resultMulti){alert(resultMulti);})
 		console.log(resultMulti);
+		
+		
 
 		// Create a function named concat that concatenates two strings, and takes a callback function. Create a log function that prints the input parameter to the console. Then call the concat function, passing in hello and world, and pass in the log function that logs the result of concat function to the callback function.
 
-		function Concat(){
-			console.log();
+		function concat(string1, string2, callback){
+			var strings = string1 + string2;
+			callback(strings);
+
 		}
 
+		function log(){
+			for(var i = 0; i< arguments.length; i++){
+				console.log(arguments[i]);
+			}
+		}
+		concat("hello", "world", log);
+		
 		// Create a function called carFactory that returns an object with the passed in make, model, year, color. Return an object literal.
-		var newCar = [];
-		function Car(make, model, year){
-			this.make = make;
-			this.model = model;
-			this.year = year;
-		}
+		function carFactory(make, model, year, color){
+			return {
+				make: make,
+				model: model,
+				year: year,
+				color: color
+			}
 
-		function carFactory(make, model, year){
-			newCar.push(new Car(make, model, year));
 		}
-
-		carFactory('Kia', 'Soul', 2018);
+		var newCar = carFactory('Kia', 'Soul', 2018, 'red');
 		console.log(newCar);
+		
 
 		// Create a function called fooBar that takes in an number parameter. If the number is divisible by 3, print foo. If the number is divisible by 5, print bar. If the number if divisible by both 3 and 5, print foobar. Otherwise print the number that is passed in.
 
@@ -63,7 +74,7 @@
 
 		// Without modifying the fooBar function, iterate from 1 to 100 and test each number.
 
-		for(var i=1; i<100; i++){
+		for(var i=1; i<=100; i++){
 			if(i % 3 === 0 && i % 5 === 0){
 				console.log("foobar");
 			}

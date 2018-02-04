@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Objects</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// Create an object literal named person representing a person. It should have properties of firstName, lastName, and email. Call the person function and write the returned object to the console.
+
+		var person = {
+			firstName: "Jane",
+			lastName: "Doe",
+			email: "jane@gmail.com" 
+		}
+
+		function person(person){
+			return person;
+		}
+		console.log(person);
+
+		// Create a constructor function that returns an instance of Person. The instance should have properties of firstName, lastName, and email. Now create an instance of Person called person.
+
+		function Person(firstName, lastName, email){
+			this.firstName = firstName;
+			this.lastName = lastName;
+			this.email = email;
+		}
+
+		var person = new Person("Jane", "Doe", "jane@gmail.com");
+
+	</script>
+</body>
+</html>

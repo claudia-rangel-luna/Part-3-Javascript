@@ -3,9 +3,30 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Events</title>
+	<style type="text/css">
+		.box{
+			position: absolute;
+			width: 200px;
+			height: 200px;
+			background-color: green;
+			top: 50px;
+			left: 10px;
+		}
+		#button-for-greenBox{
+			border-radius: 5px;
+			background-color: green;
+			font-size: 24px;
+		}
+	</style>
 </head>
-<body>
-	
+<body data-gr-c-s-loaded='true'>
+
+	<button id="button">Click Me</button>
+
+	<div class="box" style="top: 40px; left: 0px;" ></div>
+	<button id="button-for-greenBox" onclick="start()">Click Me to move green square</button>
+
+	<button id="buttonClicked">Click Me</button>
 	<script type="text/javascript">
 		// Alert "hello world" 5 seconds after the page loads.
 		
@@ -14,16 +35,37 @@
 		}, 5000);
 
 		// Add a button to the page. When clicked, say "hello world" to the console.
-
-		var button = document.createElement('button');
-		var text = document.createTextNode('Click Me');
-		button.appendChild.text;
-		
-		document.body.appendChild(button);
+		var button = document.getElementById('button');
 
 		button.addEventListener('click', function(){
 			console.log("hello world");
 		})
+
+		// Add a 200px x 200px green square to the page. Add another button to the page. When clicked, move the square to the other side of the page.
+		
+		
+		var box = document.getElementsByClassName('greenBox');
+		
+		var intervalId;		
+
+		function moveit() {
+			box.style.left = `${parseInt(box.style.left.replace("px", "")) + 10}px`;
+			
+		}
+
+		function start() {
+			intervalId = setInterval(moveit, 50);
+		}
+
+		// Create a custom event called buttonClicked. Create an event handler function for the buttonClicked event that prints "you clicked me" to the console. Add a button to the screen that when clicked, sends the buttonClicked event.
+		var buttonClicked = document.getElementById('buttonClicked');
+		 		
+		buttonClicked.addEventListener('click', function(event){
+			console.log('you clicked me');
+		})
+
+
+
 	</script>
 </body>
 </html>
